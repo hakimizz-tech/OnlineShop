@@ -24,7 +24,9 @@
                     <a href="{% url "cart:cart_detail" %}">
                         {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
                     </a>
-                {% else %}
+
+                    <!-- the message will not be displayed when the order is made -->
+                {% elif not order %} 
                     Your cart is empty
                 {% endif %}
             
