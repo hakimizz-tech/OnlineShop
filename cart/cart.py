@@ -51,7 +51,10 @@ class Cart:
         """
             Return the total price of the items in the cart
         """
-        return  sum(Decimal(item['price'] * item['quantity']) for item in self.cart.values())
+        return sum(
+            Decimal(item['price']) * item['quantity']
+            for item in self.cart.values()
+        )
 
     def clear(self):
         """
