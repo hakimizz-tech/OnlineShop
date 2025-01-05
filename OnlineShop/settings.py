@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
-from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT
+from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT, EMAIL_BACKEND
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,3 +133,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # The key that we are going to use to store cart in the user session
 CART_SESSION_ID = 'cart'
+
+# Define an email-backend to send emails to the backend rather than smtp server
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

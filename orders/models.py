@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+#A class detail of the person making an order
 class Order(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -26,6 +27,7 @@ class Order(models.Model):
         return sum( items.get_cost for items in self.items.all())
     
 
+#A class of the items to make an order
 class OrderItems(models.Model):
     order = models.ForeignKey(
         Order,
